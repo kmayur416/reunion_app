@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,11 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
+    'rest_auth',
+    'allauth',
     'app',
-    'rest_framework',
-    'rest_framework.authtoken'
-
-    
+    'rest_framework', 
 ]
 
 MIDDLEWARE = [
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'reunion.wsgi.application'
 DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.postgresql',
-          'NAME': 'app',
+          'NAME': 'my_database',
           'USER': 'admin',
           'PASSWORD': 'mayur'
 
@@ -132,3 +132,14 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#     ]
+# }
+SITE_ID = 1
+AUTH_USER_MODEL = 'app.Profile'
+
