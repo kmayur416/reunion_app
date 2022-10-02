@@ -1,5 +1,3 @@
-from email.policy import default
-from attr import fields
 from rest_framework import serializers
 from app.models import *
 
