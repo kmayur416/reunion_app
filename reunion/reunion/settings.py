@@ -88,7 +88,16 @@ WSGI_APPLICATION = 'reunion.wsgi.application'
 
 #       }
 #   }
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'social_media',
+        'USER': 'social_media_user',
+        'PASSWORD': 'w4CLdgcXUkDt5Uef9Doz2c3YfeAphCQz',
+        'HOST': 'dpg-ccsov5aen0hinul3nnvg-a.oregon-postgres.render.com',
+        'PORT': '5432',
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
