@@ -13,11 +13,11 @@ class Profile(AbstractUser):
 
 class Post(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100,blank=True)
     description = models.CharField(max_length=1000,blank=True)
     timestamp =  models.DateTimeField(auto_now_add=True)
     likes = ArrayField(ArrayField(models.IntegerField()),blank=True, null=True)
-    unlikes = ArrayField(ArrayField(models.IntegerField()),blank=True, null=True)
-    comment = ArrayField(ArrayField(models.IntegerField()),blank=True, null=True)
+    comment = ArrayField(models.CharField(max_length=200),blank=True, null=True)
 
 
     
