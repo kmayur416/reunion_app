@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from requests import delete
 import requests
 from rest_framework import viewsets
@@ -7,8 +8,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from app.serializers import *
-
-
 class CreateUser(APIView):
 
     permission_classes = []
@@ -20,6 +19,8 @@ class CreateUser(APIView):
             return Response(status=200,data={"code": 100, "result": [{"success": 'Data Created'}]})
         return Response({"code": 101, "result": [{"error": serializer.errors}]})
 
+    def get(self, request):
+        return HttpResponse(" OK ")
 
 class ProfileView(APIView):
 
